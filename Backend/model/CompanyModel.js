@@ -5,6 +5,10 @@ const companySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  companyemail:{
+    type: String,
+    required: true
+  },
   industry: {
     type: String,
     required: true
@@ -18,6 +22,10 @@ const companySchema = new mongoose.Schema({
     required: true
   },
   description: {
+    type: String,
+    required: true
+  },
+  password:{
     type: String,
     required: true
   }

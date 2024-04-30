@@ -13,13 +13,15 @@ dotenv.config()
 connectDb()
 const port = process.env.PORT || 3000
 
+app.use(express.json({limit:"50mb"}));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser())
+
 app.use("/api/users",UserRoutes)
 app.use("/api/company",CompanyRoutes)
 app.use("/api/job",jobRoutes)
 
-app.use(express.json({limit:"50mb"}));
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser())
+
 app.listen(port,()=>{
     console.log(`server is running on port http://localhost:${port}`)
 })

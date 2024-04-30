@@ -2,21 +2,22 @@
 
 import express from 'express';
 import {
-  createUser,
-  getUsers,
+  signupUser,
+  loginUser,
+  
   getUserById,
   updateUserById,
-  deleteUserById,
+  logoutUser,
 } from '../controller/userController.js';
-
+import  protectRoute  from '../middleware/protectedRoute.js';
 const router = express.Router();
 
 // Define routes for user-related actions
 
-router.post('/', createUser);
-router.get('/', getUsers);
-router.get('/:id', getUserById);
-router.put('/:id', updateUserById);
-router.delete('/:id', deleteUserById);
+router.post('/signup', signupUser);
+router.post('/login', loginUser);
+router.get('/profile/:id', getUserById);
+router.put('/update/:id',protectRoute, updateUserById);
+router.post('/logout',protectRoute, logoutUser);
 
 export default router;

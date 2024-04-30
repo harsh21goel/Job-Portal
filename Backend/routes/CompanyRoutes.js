@@ -6,16 +6,18 @@ import {
   getCompanies,
   getCompanyById,
   updateCompanyById,
-  deleteCompanyById,
+  CompanyLogin,
+  LogoutCompany,
 } from '../controller/companyController.js';
 
 const router = express.Router();
 
 // Define routes for company-related actions
-router.post('/', createCompany);
-router.get('/', getCompanies);
+router.post('/create', createCompany);
+router.post('/login', CompanyLogin);
+router.get('/profile', getCompanies);
 router.get('/:id', getCompanyById);
 router.put('/:id', updateCompanyById);
-router.delete('/:id', deleteCompanyById);
+router.post('/logout', LogoutCompany);
 
 export default router;
