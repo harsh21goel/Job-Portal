@@ -5,12 +5,13 @@ import connectDb from "./db/connect.js"
 import UserRoutes from "./routes/UserRoutes.js"
 import CompanyRoutes from "./routes/CompanyRoutes.js"
 import jobRoutes from "./routes/jobRoutes.js"
-
+import cors from "cors"
 
 
 const app = express()
 dotenv.config()
 connectDb()
+app.use(cors());
 const port = process.env.PORT || 3000
 
 app.use(express.json({limit:"50mb"}));

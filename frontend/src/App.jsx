@@ -1,29 +1,19 @@
 import { useState } from 'react'
-
+import {Outlet} from "react-router-dom"
 import './App.css'
 import { Box,Button,Container,Flex,Text ,Center} from '@chakra-ui/react'
+import Header from './component/Header'
+import Footer from './component/Footer'
+import HomePage from './pages/HomePage'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Container bg={"purple.900"} maxW={"full"} h={"100px"}>
-   
-    <Center h="100%" justifyContent={"space-around"}>
-        <Button bg={"btn.100"} border={`1px solid gray`}>
-          Hello
-        </Button>
-        <Button bg={"btn.100"} border={`1px solid gray`}>
-          Hello
-        </Button>
-        <Button bg={"btn.100"} border={`1px solid gray`}>
-          Hello
-        </Button>
-        <Button bg={"btn.100"} border={`1px solid gray`}>
-          Hello
-        </Button>
-      </Center>
-   </Container>
+    <Header/>
+    <Outlet/>
+    <HomePage/>
+    <Footer/>
     </>
   )
 }
