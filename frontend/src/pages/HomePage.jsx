@@ -10,14 +10,10 @@ function HomePage() {
               headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
-              }
+              },
+              body: { }
             });
-            if (!res.ok) {
-              throw new Error(res.statusText);
-            }
-            
-           
-            
+           console.log(res  )
             const data = await res.json();
             setjob(data);
         } catch (error) {
