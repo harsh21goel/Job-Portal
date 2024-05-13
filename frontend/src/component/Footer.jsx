@@ -7,6 +7,7 @@ function Footer() {
       bg="purple.900"
       color="gray.100"
       py={8}
+      mt={20}
     >
       {/* Footer Content */}
       <Stack direction="column" spacing={4} align="center">

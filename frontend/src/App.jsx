@@ -5,7 +5,7 @@ import { Box,Button,Container,Flex,Text ,Center} from '@chakra-ui/react'
 import Header from './component/Header'
 import Footer from './component/Footer'
 import HomePage from './pages/HomePage'
-import Job from './component/Job'
+import Job from './component/JobCard'
 function App() {
   const [count, setCount] = useState(0)
 

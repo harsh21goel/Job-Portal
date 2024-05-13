@@ -17,6 +17,10 @@ export const createJob = async (req, res) => {
 export const getJobs = async (req, res) => {
   try {
     const jobs = await Job.find();
+    if (!jobs) {
+      return res.status(404).json({ message: 'Job not found' });
+      
+    }
     res.status(200).json(jobs);
     // console.log(jobs)
   } catch (error) {

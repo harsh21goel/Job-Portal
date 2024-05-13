@@ -25,7 +25,12 @@ const jobSchema = new mongoose.Schema({
   salary: {
     type: Number,
     required: true
+  },
+  isRemote:{
+    type: Boolean,
+    required: true
   }
+
 });
 
 const Job = mongoose.model('Job', jobSchema);

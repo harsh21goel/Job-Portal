@@ -4,7 +4,7 @@ import LoginBtn from './LoginBtn'
 
 function Header() {
   return (
-    <Container maxW={"full"} bg={"purple.900"} h={"70px"} >
+    <Container maxW={"full"} bg={"purple.900"} h={"70px"} mb={20} >
         <Flex justifyContent={"space-between"} color={"gray.100"} h={"full"} alignItems={"center"} p={5}  >
             <h1>LOGO</h1>
         <LoginBtn />

@@ -1,33 +1,24 @@
-import React, { useEffect,useState } from 'react'
-import Job from '../component/Job';
+import React, { useEffect, useState } from "react";
+import Job from "../component/JobCard";
+// import { Box, Heading, Text, Link, Button } from "@chakra-ui/react";
+
 function HomePage() {
-    const [job, setjob] = useState("")
-    useEffect(() => {
-        const getfeed= async ()=>{
-          try {
-            const res = await fetch('/api/job',{
-              method: 'GET',
-              headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-              },
-              body: { }
-            });
-           console.log(res  )
-            const data = await res.json();
-            setjob(data);
-        } catch (error) {
-            console.error(error.message);
-            
-        }
-       
-        }
-        getfeed()
-    },[])
-  return (
-   <Job job={job}/>
-    
-  )
+  const [jobs, setjobs] = useState([]);
+  useEffect(() => {
+    const getfeed = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/api/job/jobs");
+        const data = await res.json();
+
+        setjobs(data);
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    getfeed();
+  }, []);
+
+  return <Job jobs={jobs} />;
 }
 
-export default HomePage
+export default HomePage;

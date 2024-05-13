@@ -2,13 +2,14 @@
 
 import Company from "../model/CompanyModel.js";
 import generateTokenAndSetCookie from "../utils/generateTokenAndSetCookie.js";
+import bcrypt from "bcryptjs"
 // Create a new company
 export const createCompany = async (req, res) => {
   try {
     const { name, industry, size, location, description, password,companyemail } = req.body;
-    const user = await Company.findOne({ name });
-    if (user) {
-      return res.status(400).json({ error: "User alreay exist" });
+    const company = await Company.findOne({ name });
+    if (company) {
+      return res.status(400).json({ error: "compay alreay exist" });
     }
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -40,7 +41,7 @@ export const createCompany = async (req, res) => {
     }
   } catch (error) {
     res.status(400).json({ message: error.message });
-    console.log("Error in loginUser  "+ error.message);
+    console.log("Error in createcompany  "+ error.message);
 
   }
 };
