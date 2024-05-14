@@ -20,7 +20,7 @@ const colors={
   purple:{
    100:"#805AD5",
    500:"#6B46C1",
-   900:"#7F00FF"
+   900:"#4A00E0"
   },
   btn:{
     100:"#eb6e14"
@@ -36,7 +36,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <ChakraProvider theme={theme}>
     <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-    <App />
+    <App  />
     </ChakraProvider>
     </BrowserRouter>
   </React.StrictMode>,

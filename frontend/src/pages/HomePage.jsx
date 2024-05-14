@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Job from "../component/JobCard";
-import {  Heading } from "@chakra-ui/react";
+import {  Container, Heading } from "@chakra-ui/react";
 
 function HomePage() {
   const [jobs, setjobs] = useState([]);
@@ -19,12 +19,12 @@ function HomePage() {
   }, []);
 
   return (
-    <>
+    <Container maxW={"full"} bg={"gray.100"}>
        <Job jobs={jobs} />
        <Heading as="h3" size="md" fontWeight="bold" color="gray.500" textAlign={"center"} mt={0} fontStyle={"oblique"}>
         Log in to see jobs which suits you
       </Heading>
-    </>
+    </Container>
   
 )
 }

@@ -37,7 +37,7 @@ function Footer() {
         <Text>Subscribe to our newsletter:</Text>
         <Flex align="center">
           <Input placeholder="Enter your email" mr={4} />
-          <Button bg={"btn.100"} color={"gray.100"}>Subscribe</Button>
+          <Button fontSize={"sm"} bg={"btn.100"} color={"gray.100"} _hover={{transform: "scale(1.1)"}}>Subscribe</Button>
         </Flex>
         <Text mt={4}>© 2024 Job Portal. All rights reserved.</Text>
       </Stack>

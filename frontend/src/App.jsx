@@ -10,14 +10,14 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <Box maxW={"full"} bg={"gray.100"}>
     <Header/>
     <Routes>
       <Route path="/" element={<HomePage/>} />
       <Route path="/job" element={<Job/>} />
     </Routes>
     <Footer/>
-    </>
+    </Box>
   )
 }
 

@@ -56,7 +56,7 @@ function Job({ jobs }) {
             {job.salary ? `${job.salary.toLocaleString()}` : "Not specified"}
           </Text>
           <Link href={"/" || "/"} textDecoration="underline" isExternal>
-            <Button bg="purple.600" color="white" _hover={{ bg: "purple.700" }}>
+            <Button bg="btn.100" color="gray.100" _hover={{ transform: "scale(1.04)" }}>
               Apply Now
             </Button>
           </Link>
