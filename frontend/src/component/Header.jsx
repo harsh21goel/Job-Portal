@@ -8,9 +8,9 @@ function Header() {
         <Flex justifyContent={"space-between"} color={"gray.100"} h={"full"} alignItems={"center"} p={5}  >
             <h1>LOGO</h1>
             <Flex >
-            <LoginBtn text={"Login as Company"} />
+            <LoginBtn text={"Login as Company"} nav={"company-login"} />
             
-        <LoginBtn text={"Job Seeker"}/>
+        <LoginBtn text={"Job Seeker"} nav={"login"}/>
             </Flex>
         
         </Flex>

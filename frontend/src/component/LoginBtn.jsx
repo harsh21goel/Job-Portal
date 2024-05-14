@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button } from '@chakra-ui/react'
-function LoginBtn({text}) {
+import { Link } from 'react-router-dom'
+function LoginBtn({text,nav}) {
   return (
+    <Link to={`/${nav}`}>
     <Button
     variant="outline"
     borderColor="btn.100"
@@ -17,6 +19,7 @@ function LoginBtn({text}) {
   >
     {text}
   </Button>
+  </Link>
   )
 }
 
